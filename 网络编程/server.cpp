@@ -43,17 +43,18 @@ int main()
 
     //连接成功 打印客户端IP和端口
     char ip[32];
-    printf("客户端ip %s,端口 %d",inet_ntop(AF_INET,&caddr.sin_addr.s_addr,ip,sizeof(ip)), ntohs(caddr.sin_port));
+    printf("客户端ip %s,端口 %d \n",inet_ntop(AF_INET,&caddr.sin_addr.s_addr,ip,sizeof(ip)), ntohs(caddr.sin_port));
 
     //通信
     while (1)
     {
+        printf("进入到while\n");
         //接收数据
         char buff[1024];
         int len = recv(cfd,buff,sizeof(buff),0);
         if(len > 0)
         {
-            printf("client say: %s",buff);
+            printf("client say: %s\n",buff);
             send(cfd,buff,len,0);
         }
         else if(len == 0)
