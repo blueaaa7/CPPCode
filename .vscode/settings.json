@@ -79,6 +79,7 @@
         "regex": "cpp",
         "map": "cpp",
         "ranges": "cpp",
-        "condition_variable": "cpp"
+        "condition_variable": "cpp",
+        "numeric": "cpp"
     }
 }
